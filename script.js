@@ -165,6 +165,7 @@ Caterpillar.prototype.transformation = function () {
             this.transformState = 3;
             var bfNum = Math.floor(7 * Math.random()) + 1;
             this.elem.style.backgroundImage = "url(bf"+bfNum+".png)";
+            this.elem.style.zIndex = 500;
             break
         default:
             return;
