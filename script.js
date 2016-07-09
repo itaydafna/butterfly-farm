@@ -31,7 +31,7 @@ function Caterpillar(x, y, faceDirection) {
 
 Caterpillar.prototype.render = function () {
     this.elem = document.createElement("div");
-    this.elem.style.backgroundImage = "url(Caterpillar.png)";
+    this.elem.style.backgroundImage = "url(caterpillar.png)";
     this.elem.style.transform = 'rotate(' + this.angle + 'deg)';
     this.elem.style.top = this.y + "px";
     this.elem.style.left = this.x + "px";
