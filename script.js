@@ -48,6 +48,39 @@ Caterpillar.prototype.angleRigth = function () {
     this.elem.style.transform = 'rotate(' + this.angle + 'deg)';
 }
 
+Caterpillar.prototype.turnAround = function (){
+    switch(this.faceDirection){
+        case "up":
+            this.faceDirection = faceDirections.down;
+            this.y+=60;
+            this.angle+=180;
+            this.elem.style.transform = 'rotate(' + this.angle + 'deg)';
+            this.elem.style.top = this.y + "px";
+            break;
+        case "down":
+            this.faceDirection = faceDirections.up;
+            this.y-=60;
+            this.angle+=180;
+            this.elem.style.transform = 'rotate(' + this.angle + 'deg)';
+            this.elem.style.top = this.y + "px";
+            break;
+        case "left":
+            this.faceDirection = faceDirections.right;
+            this.x+=60;
+            this.angle+=180;
+            this.elem.style.transform = 'rotate(' + this.angle + 'deg)';
+            this.elem.style.left = this.x + "px";
+            break;
+        case "right":
+            this.faceDirection = faceDirections.left;
+            this.x-=60;
+            this.angle+=180;
+            this.elem.style.transform = 'rotate(' + this.angle + 'deg)';
+            this.elem.style.left = this.x + "px";
+    }
+
+}
+
 Caterpillar.prototype.turnLeft = function () {
     var that = this;
     switch (that.faceDirection) {
@@ -95,36 +128,9 @@ Caterpillar.prototype.turnRight = function () {
 Caterpillar.prototype.move = function () {
     var that = this;
     if(!helper.isCollide(that.elem,body)){
-        switch(that.faceDirection){
-            case "up":
-                that.faceDirection = faceDirections.down;
-                that.y+=60;
-                that.angle+=180;
-                that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
-                that.elem.style.top = that.y + "px";
-            break;
-            case "down":
-                that.faceDirection = faceDirections.up;
-                that.y-=60;
-                that.angle+=180;
-                that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
-                that.elem.style.top = that.y + "px";
-                break;
-            case "left":
-                that.faceDirection = faceDirections.right;
-                that.x+=60;
-                that.angle+=180;
-                that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
-                that.elem.style.left = that.x + "px";
-                break;
-            case "right":
-                that.faceDirection = faceDirections.left;
-                that.x-=60;
-                that.angle+=180;
-                that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
-                that.elem.style.left = that.x + "px";
-        }
+        that.turnAround();
     };
+
     var step = function(){
         switch (that.transformState){
             case 1:
@@ -138,6 +144,7 @@ Caterpillar.prototype.move = function () {
             break;
         }
     }();
+
     switch (this.faceDirection) {
         case 'up' :
             this.y -= step;
