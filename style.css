@@ -1,0 +1,24 @@
+body {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url(leaves.jpg);
+    background-size: cover;
+}
+
+
+
+div {
+    background: no-repeat;
+    background-size: contain;
+    position: absolute;
+    transition: background-image 2500ms, transform 200ms;
+    height: 140px;
+    width: 140px;
+    overflow: visible;
+    transform-origin: 50%;
+    background-position: 50% 50%;
+}
