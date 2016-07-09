@@ -98,28 +98,28 @@ Caterpillar.prototype.move = function () {
         switch(that.faceDirection){
             case "up":
                 that.faceDirection = faceDirections.down;
-                that.y+=50;
+                that.y+=60;
                 that.angle+=180;
                 that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
                 that.elem.style.top = that.y + "px";
             break;
             case "down":
                 that.faceDirection = faceDirections.up;
-                that.y-=50;
+                that.y-=60;
                 that.angle+=180;
                 that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
                 that.elem.style.top = that.y + "px";
                 break;
             case "left":
                 that.faceDirection = faceDirections.right;
-                that.x+=50;
+                that.x+=60;
                 that.angle+=180;
                 that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
                 that.elem.style.left = that.x + "px";
                 break;
             case "right":
                 that.faceDirection = faceDirections.left;
-                that.x-=50;
+                that.x-=60;
                 that.angle+=180;
                 that.elem.style.transform = 'rotate(' + that.angle + 'deg)';
                 that.elem.style.left = that.x + "px";
