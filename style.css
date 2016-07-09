@@ -15,7 +15,7 @@ div {
     background: no-repeat;
     background-size: contain;
     position: absolute;
-    transition: background-image 2500ms, transform 200ms;
+    transition: background-image 600ms, transform 200ms;
     height: 140px;
     width: 140px;
     overflow: visible;
