@@ -221,7 +221,7 @@ Caterpillar.prototype.randomTurn = function () {
             }
         }();
     turn.call(that);
-    setTimeout(that.randomTurn.bind(that), Math.floor(10000 * Math.random()) + 1);
+    setTimeout(that.randomTurn.bind(that), Math.floor(5000 * Math.random()) + 1);
 }
 
 Caterpillar.prototype.moveCP = function () {
